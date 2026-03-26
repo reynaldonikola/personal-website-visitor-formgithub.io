@@ -12,10 +12,9 @@ function checkField(input, validator, errorMessage) {
   if (!validator(input.value)) {
     showError(input, errorMessage);
     return false;
-  } else {
-    showSuccess(input);
-    return true;
   }
+  showSuccess(input);
+  return true;
 }
 
 fullName.addEventListener("input", () => {
@@ -38,7 +37,16 @@ state.addEventListener("change", () => {
   checkField(state, validateState, "Please select a state.");
 });
 
-form.addEventListener("submit", function (event) {
+visitReason.addEventListener("input", () => {
+  if (visitReason.value.trim().length > 0) {
+    showSuccess(visitReason);
+  } else {
+    visitReason.classList.remove("valid", "invalid");
+    visitReason.parentElement.querySelector(".error-message").textContent = "";
+  }
+});
+
+form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const isNameValid = checkField(fullName, validateName, "Name must be at least 3 characters.");
@@ -52,26 +60,29 @@ form.addEventListener("submit", function (event) {
     form.reset();
 
     const fields = form.querySelectorAll("input, select, textarea");
-    fields.forEach(field => {
-      field.classList.remove("valid");
-      field.classList.remove("invalid");
+    fields.forEach((field) => {
+      field.classList.remove("valid", "invalid");
+    });
+
+    const messages = form.querySelectorAll(".error-message");
+    messages.forEach((message) => {
+      message.textContent = "";
     });
   } else {
     successMessage.textContent = "";
   }
 });
 
-clearBtn.addEventListener("click", function () {
+clearBtn.addEventListener("click", () => {
   successMessage.textContent = "";
-  const fields = form.querySelectorAll("input, select, textarea");
-  const messages = form.querySelectorAll(".error-message");
 
-  fields.forEach(field => {
-    field.classList.remove("valid");
-    field.classList.remove("invalid");
+  const fields = form.querySelectorAll("input, select, textarea");
+  fields.forEach((field) => {
+    field.classList.remove("valid", "invalid");
   });
 
-  messages.forEach(message => {
+  const messages = form.querySelectorAll(".error-message");
+  messages.forEach((message) => {
     message.textContent = "";
   });
 });
