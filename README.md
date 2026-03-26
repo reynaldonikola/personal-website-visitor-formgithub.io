@@ -1,2 +1,22 @@
-# personal-website-visitor-formgithub.io
-Personal website with a visitor registration form built using HTML, CSS (Flexbox), and JavaScript. Includes custom validation (required fields, email, phone, zip, and state), real-time feedback, and a thank-you message on submit. Organized with main.js, validation.js, and page.js.
+# Visitor Registration Form Website
+
+This project is a modern visitor registration form built with HTML, CSS, and JavaScript. It features a professional background image, responsive layout, clean styling, and real-time form validation.
+
+## Features
+- Responsive design for desktop and mobile
+- Professional full-screen background image
+- Real-time validation feedback
+- Clear error and success messages
+- Modern glass-style form card
+- Clean code structure with separate CSS and JavaScript files
+
+## Technologies Used
+- HTML5
+- CSS3
+- JavaScript
+
+## Live Demo
+Add your Netlify or GitHub Pages link here.
+
+## Author
+Reynaldo Moros
