@@ -1,39 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Visitor Form</title>
-<link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visitor Registration Form</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
+  <header class="hero">
+    <h1>Visitor Registration Form</h1>
+    <p>Please complete the form below to register your visit.</p>
+  </header>
 
-<h2>Visitor Form</h2>
+  <main class="container">
+    <section class="form-card">
+      <h2>Register Here</h2>
 
-<form id="myform" novalidate>
-<input id="firstName" class="track-validation" placeholder="First Name">
-<div class="errorMsg"></div>
+      <form id="visitorForm" novalidate>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+          <small class="error-message"></small>
+        </div>
 
-<input id="lastName" class="track-validation" placeholder="Last Name">
-<div class="errorMsg"></div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com">
+          <small class="error-message"></small>
+        </div>
 
-<input id="email" class="track-validation" placeholder="Email">
-<div class="errorMsg"></div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" placeholder="123-456-7890">
+          <small class="error-message"></small>
+        </div>
 
-<div id="howFoundWrapper">
-<label><input type="checkbox" name="howFound"> Google</label>
-<label><input type="checkbox" name="howFound"> Friend</label>
-</div>
-<div id="howFoundError"></div>
+        <div class="form-group">
+          <label for="zip">ZIP Code</label>
+          <input type="text" id="zip" name="zip" placeholder="84095">
+          <small class="error-message"></small>
+        </div>
 
-<button id="submitBtn" type="submit">Submit</button>
-</form>
+        <div class="form-group">
+          <label for="state">State</label>
+          <select id="state" name="state">
+            <option value="">Select a state</option>
+            <option value="UT">Utah</option>
+            <option value="CA">California</option>
+            <option value="TX">Texas</option>
+            <option value="FL">Florida</option>
+            <option value="NY">New York</option>
+          </select>
+          <small class="error-message"></small>
+        </div>
 
-<div id="thankYouMessage" style="display:none;">
-<h3>Thank you!</h3>
-</div>
+        <div class="form-group">
+          <label for="visitReason">Reason for Visit</label>
+          <textarea id="visitReason" name="visitReason" rows="4" placeholder="Write a short message"></textarea>
+          <small class="error-message"></small>
+        </div>
 
-<script src="js/validation.js"></script>
-<script src="js/main.js"></script>
+        <div class="button-group">
+          <button type="submit">Submit</button>
+          <button type="reset" id="clearBtn" class="secondary">Clear</button>
+        </div>
+
+        <p id="successMessage" class="success-message"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by Reynaldo Moros</p>
+  </footer>
+
+  <script src="validation.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
