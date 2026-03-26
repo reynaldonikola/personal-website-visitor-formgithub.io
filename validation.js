@@ -1,60 +1,40 @@
-const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function showError(input, message) {
+  const formGroup = input.parentElement;
+  const errorDisplay = formGroup.querySelector(".error-message");
 
-function initValidation(formSelector){
-const form=document.querySelector(formSelector);
-
-form.addEventListener("submit",function(e){
-e.preventDefault();
-if(validateForm()){
-document.getElementById("myform").style.display="none";
-document.getElementById("thankYouMessage").style.display="block";
-}
-});
-
-document.querySelectorAll(".track-validation").forEach(i=>{
-i.addEventListener("blur",()=>validateField(i.id));
-});
+  input.classList.remove("valid");
+  input.classList.add("invalid");
+  errorDisplay.textContent = message;
 }
 
-function validateForm(){
-let v=true;
-v=checkRequired("firstName","Required")&&v;
-v=checkRequired("lastName","Required")&&v;
-v=checkFormat("email","Invalid email",emailRegex)&&v;
-v=validateHowFound()&&v;
-return v;
+function showSuccess(input) {
+  const formGroup = input.parentElement;
+  const errorDisplay = formGroup.querySelector(".error-message");
+
+  input.classList.remove("invalid");
+  input.classList.add("valid");
+  errorDisplay.textContent = "";
 }
 
-function validateField(id){
-if(id==="email") return checkFormat(id,"Invalid email",emailRegex);
-return checkRequired(id,"Required");
+function validateName(name) {
+  return name.trim().length >= 3;
 }
 
-function checkRequired(id,msg){
-const el=document.getElementById(id);
-const valid=el.value.trim()!=="";
-setValidity(el,valid,msg);
-return valid;
+function validateEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email.trim());
 }
 
-function checkFormat(id,msg,regex){
-const el=document.getElementById(id);
-const valid=regex.test(el.value);
-setValidity(el,valid,msg);
-return valid;
+function validatePhone(phone) {
+  const regex = /^\d{3}-?\d{3}-?\d{4}$/;
+  return regex.test(phone.trim());
 }
 
-function validateHowFound(){
-const checked=document.querySelectorAll('[name="howFound"]:checked').length>0;
-const err=document.getElementById("howFoundError");
-err.textContent=checked?"":"Select one";
-return checked;
+function validateZip(zip) {
+  const regex = /^\d{5}$/;
+  return regex.test(zip.trim());
 }
 
-function setValidity(el,valid,msg){
-el.classList.add("was-validated");
-el.setCustomValidity(valid?"":msg);
-if(el.nextElementSibling){
-el.nextElementSibling.textContent=valid?"":msg;
-}
+function validateState(state) {
+  return state !== "";
 }
