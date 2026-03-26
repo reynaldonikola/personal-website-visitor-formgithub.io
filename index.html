@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visitor Form</title>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<h2>Visitor Form</h2>
+
+<form id="myform" novalidate>
+<input id="firstName" class="track-validation" placeholder="First Name">
+<div class="errorMsg"></div>
+
+<input id="lastName" class="track-validation" placeholder="Last Name">
+<div class="errorMsg"></div>
+
+<input id="email" class="track-validation" placeholder="Email">
+<div class="errorMsg"></div>
+
+<div id="howFoundWrapper">
+<label><input type="checkbox" name="howFound"> Google</label>
+<label><input type="checkbox" name="howFound"> Friend</label>
+</div>
+<div id="howFoundError"></div>
+
+<button id="submitBtn" type="submit">Submit</button>
+</form>
+
+<div id="thankYouMessage" style="display:none;">
+<h3>Thank you!</h3>
+</div>
+
+<script src="js/validation.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

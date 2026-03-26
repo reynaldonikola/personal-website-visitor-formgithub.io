@@ -1,0 +1,4 @@
+body{font-family:Arial}
+.errorMsg{color:red;font-size:12px}
+.was-validated:invalid{border:1px solid red}
+.was-validated:valid{border:1px solid green}
