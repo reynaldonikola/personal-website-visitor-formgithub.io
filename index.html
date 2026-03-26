@@ -2,85 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Visitor Registration Form</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discount Disney Tickets | Registration</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <p class="eyebrow">Personal Website Project</p>
-      <h1>Visitor Registration Form</h1>
-      <p class="hero-text">Please complete the form below to register your visit. This project includes responsive design, real-time validation, and clear visual feedback.</p>
-    </div>
-  </header>
+  <main class="hero-section">
+    <div class="overlay"></div>
 
-  <main class="container">
+    <section class="hero-content">
+      <p class="eyebrow">Independent Ticket Deals</p>
+      <h1>Discount Tickets for Disneyland and California Adventure</h1>
+      <p class="hero-text">
+        Register below to receive updates about discounted tickets, family vacation offers,
+        limited-time promotions, and travel packages for Disneyland Resort and Disney California Adventure.
+      </p>
+    </section>
+
     <section class="form-card">
-      <div class="card-header">
-        <h2>Register Here</h2>
-        <p>All required fields must be completed before submission.</p>
+      <h2>Get Your Discount Offers</h2>
+      <p class="form-intro">
+        Complete the form below and we will contact you with current ticket deals and vacation options.
+      </p>
+
+      <form id="myform" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" class="track-validation" placeholder="Enter your first name">
+            <div class="errorMsg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" class="track-validation" placeholder="Enter your last name">
+            <div class="errorMsg"></div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="address">Address *</label>
+            <input type="text" id="address" name="address" class="track-validation" placeholder="Enter your address">
+            <div class="errorMsg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="city">City *</label>
+            <input type="text" id="city" name="city" class="track-validation" placeholder="Enter your city">
+            <div class="errorMsg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="state">State *</label>
+            <input type="text" id="state" name="state" maxlength="2" class="track-validation" placeholder="CA">
+            <div class="errorMsg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="zip">Zip Code *</label>
+            <input type="text" id="zip" name="zip" class="track-validation" placeholder="90001">
+            <div class="errorMsg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="text" id="phone" name="phone" class="track-validation" placeholder="123-456-7890">
+            <div class="errorMsg"></div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="email">Email Address *</label>
+            <input type="text" id="email" name="email" class="track-validation" placeholder="example@email.com">
+            <div class="errorMsg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="travelMonth">Preferred Travel Month</label>
+            <select id="travelMonth" name="travelMonth">
+              <option value="">Select a month</option>
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="guests">Number of Guests</label>
+            <select id="guests" name="guests">
+              <option value="">Select</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5+</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="source-group">
+          <legend>What are you interested in? *</legend>
+          <div class="checkbox-grid" id="howFoundWrapper">
+            <label><input type="checkbox" name="howFound" value="Disneyland Tickets"> Disneyland Tickets</label>
+            <label><input type="checkbox" name="howFound" value="California Adventure Tickets"> California Adventure Tickets</label>
+            <label><input type="checkbox" name="howFound" value="Park Hopper Deals"> Park Hopper Deals</label>
+            <label><input type="checkbox" name="howFound" value="Hotel Packages"> Hotel Packages</label>
+            <label><input type="checkbox" name="howFound" value="Family Vacation Packages"> Family Vacation Packages</label>
+            <label><input type="checkbox" name="howFound" value="Seasonal Promotions"> Seasonal Promotions</label>
+          </div>
+          <div class="errorMsg checkbox-error" id="howFoundError"></div>
+        </fieldset>
+
+        <div class="form-group full-width">
+          <label for="comments">Additional Notes</label>
+          <textarea id="comments" name="comments" rows="4" placeholder="Tell us what kind of discount or vacation package you are looking for"></textarea>
+        </div>
+
+        <div class="agreement-box">
+          <p>
+            By submitting this form, you agree to receive promotional updates and travel offers.
+          </p>
+        </div>
+
+        <div class="button-row">
+          <button id="submitBtn" type="submit">Get My Discount Offers</button>
+          <button id="resetBtn" type="reset" class="secondary-btn">Clear</button>
+        </div>
+      </form>
+
+      <div id="thankYouMessage" class="thank-you hidden-section">
+        <h3>Thank you for registering.</h3>
+        <p>We will contact you soon with available ticket discounts and vacation offers.</p>
       </div>
 
-      <form id="visitorForm" novalidate>
-        <div class="form-group">
-          <label for="fullName">Full Name <span>*</span></label>
-          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
-          <small class="error-message"></small>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address <span>*</span></label>
-          <input type="email" id="email" name="email" placeholder="example@email.com">
-          <small class="error-message"></small>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="phone">Phone Number <span>*</span></label>
-            <input type="text" id="phone" name="phone" placeholder="123-456-7890">
-            <small class="error-message"></small>
-          </div>
-
-          <div class="form-group">
-            <label for="zip">ZIP Code <span>*</span></label>
-            <input type="text" id="zip" name="zip" placeholder="84095">
-            <small class="error-message"></small>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="state">State <span>*</span></label>
-          <select id="state" name="state">
-            <option value="">Select a state</option>
-            <option value="UT">Utah</option>
-            <option value="CA">California</option>
-            <option value="TX">Texas</option>
-            <option value="FL">Florida</option>
-            <option value="NY">New York</option>
-            <option value="NV">Nevada</option>
-            <option value="AZ">Arizona</option>
-            <option value="CO">Colorado</option>
-          </select>
-          <small class="error-message"></small>
-        </div>
-
-        <div class="form-group">
-          <label for="visitReason">Reason for Visit</label>
-          <textarea id="visitReason" name="visitReason" rows="4" placeholder="Write a short message"></textarea>
-          <small class="error-message"></small>
-        </div>
-
-        <div class="button-group">
-          <button type="submit" class="primary-btn">Submit</button>
-          <button type="reset" id="clearBtn" class="secondary-btn">Clear</button>
-        </div>
-
-        <p id="successMessage" class="success-message" aria-live="polite"></p>
-      </form>
+      <p class="disclaimer">
+        This is an independent promotional website and is not the official Disneyland Resort website.
+      </p>
     </section>
   </main>
 
@@ -88,7 +153,8 @@
     <p>Created by Reynaldo Moros</p>
   </footer>
 
-  <script src="validation.js"></script>
-  <script src="main.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/page.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
