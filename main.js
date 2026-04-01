@@ -1,23 +1,23 @@
 document.getElementById("visitorForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-    let visitors = document.getElementById("visitors").value;
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let visitors = document.getElementById("visitors").value.trim();
     let month = document.getElementById("month").value;
     let park = document.getElementById("park").value;
     let deal = document.getElementById("deal").value;
 
     let message = validateForm(name, email, phone, visitors, month, park, deal);
+    let messageBox = document.getElementById("message");
 
     if (message !== "") {
-        document.getElementById("message").innerText = message;
-        document.getElementById("message").style.color = "red";
+        messageBox.innerText = message;
+        messageBox.style.color = "red";
     } else {
-        document.getElementById("message").innerText = "Success! Check your email for exclusive deals.";
-        document.getElementById("message").style.color = "green";
-
+        messageBox.innerText = "Success! Your discount request has been submitted.";
+        messageBox.style.color = "green";
         document.getElementById("visitorForm").reset();
     }
 });
