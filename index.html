@@ -1,160 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discount Disney Tickets | Registration</title>
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/theme.css">
+    <meta charset="UTF-8">
+    <title>Theme Park Deals</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <main class="hero-section">
-    <div class="overlay"></div>
 
-    <section class="hero-content">
-      <p class="eyebrow">Independent Ticket Deals</p>
-      <h1>Discount Tickets for Disneyland and California Adventure</h1>
-      <p class="hero-text">
-        Register below to receive updates about discounted tickets, family vacation offers,
-        limited-time promotions, and travel packages for Disneyland Resort and Disney California Adventure.
-      </p>
-    </section>
+    <div class="container">
+        <h1>Get Exclusive Theme Park Discounts</h1>
+        <p>Sign up to receive special offers for Disneyland and Universal Studios!</p>
 
-    <section class="form-card">
-      <h2>Get Your Discount Offers</h2>
-      <p class="form-intro">
-        Complete the form below and we will contact you with current ticket deals and vacation options.
-      </p>
+        <form id="visitorForm">
+            <label>Full Name:</label>
+            <input type="text" id="name">
 
-      <form id="myform" novalidate>
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="firstName">First Name *</label>
-            <input type="text" id="firstName" name="firstName" class="track-validation" placeholder="Enter your first name">
-            <div class="errorMsg"></div>
-          </div>
+            <label>Email:</label>
+            <input type="email" id="email">
 
-          <div class="form-group">
-            <label for="lastName">Last Name *</label>
-            <input type="text" id="lastName" name="lastName" class="track-validation" placeholder="Enter your last name">
-            <div class="errorMsg"></div>
-          </div>
+            <label>Phone:</label>
+            <input type="text" id="phone">
 
-          <div class="form-group full-width">
-            <label for="address">Address *</label>
-            <input type="text" id="address" name="address" class="track-validation" placeholder="Enter your address">
-            <div class="errorMsg"></div>
-          </div>
+            <label>Number of Visitors:</label>
+            <input type="number" id="visitors">
 
-          <div class="form-group">
-            <label for="city">City *</label>
-            <input type="text" id="city" name="city" class="track-validation" placeholder="Enter your city">
-            <div class="errorMsg"></div>
-          </div>
-
-          <div class="form-group">
-            <label for="state">State *</label>
-            <input type="text" id="state" name="state" maxlength="2" class="track-validation" placeholder="CA">
-            <div class="errorMsg"></div>
-          </div>
-
-          <div class="form-group">
-            <label for="zip">Zip Code *</label>
-            <input type="text" id="zip" name="zip" class="track-validation" placeholder="90001">
-            <div class="errorMsg"></div>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="text" id="phone" name="phone" class="track-validation" placeholder="123-456-7890">
-            <div class="errorMsg"></div>
-          </div>
-
-          <div class="form-group full-width">
-            <label for="email">Email Address *</label>
-            <input type="text" id="email" name="email" class="track-validation" placeholder="example@email.com">
-            <div class="errorMsg"></div>
-          </div>
-
-          <div class="form-group">
-            <label for="travelMonth">Preferred Travel Month</label>
-            <select id="travelMonth" name="travelMonth">
-              <option value="">Select a month</option>
-              <option>January</option>
-              <option>February</option>
-              <option>March</option>
-              <option>April</option>
-              <option>May</option>
-              <option>June</option>
-              <option>July</option>
-              <option>August</option>
-              <option>September</option>
-              <option>October</option>
-              <option>November</option>
-              <option>December</option>
+            <label>Travel Month:</label>
+            <select id="month">
+                <option value="">Select Month</option>
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
             </select>
-          </div>
 
-          <div class="form-group">
-            <label for="guests">Number of Guests</label>
-            <select id="guests" name="guests">
-              <option value="">Select</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5+</option>
+            <label>Park:</label>
+            <select id="park">
+                <option value="">Select Park</option>
+                <option>Disneyland</option>
+                <option>California Adventure</option>
+                <option>Universal Studios Hollywood</option>
             </select>
-          </div>
-        </div>
 
-        <fieldset class="source-group">
-          <legend>What are you interested in? *</legend>
-          <div class="checkbox-grid" id="howFoundWrapper">
-            <label><input type="checkbox" name="howFound" value="Disneyland Tickets"> Disneyland Tickets</label>
-            <label><input type="checkbox" name="howFound" value="California Adventure Tickets"> California Adventure Tickets</label>
-            <label><input type="checkbox" name="howFound" value="Park Hopper Deals"> Park Hopper Deals</label>
-            <label><input type="checkbox" name="howFound" value="Hotel Packages"> Hotel Packages</label>
-            <label><input type="checkbox" name="howFound" value="Family Vacation Packages"> Family Vacation Packages</label>
-            <label><input type="checkbox" name="howFound" value="Seasonal Promotions"> Seasonal Promotions</label>
-          </div>
-          <div class="errorMsg checkbox-error" id="howFoundError"></div>
-        </fieldset>
+            <label>Type of Deal:</label>
+            <select id="deal">
+                <option value="">Select Option</option>
+                <option>Tickets Discount</option>
+                <option>Hotel + Tickets</option>
+                <option>Family Package</option>
+            </select>
 
-        <div class="form-group full-width">
-          <label for="comments">Additional Notes</label>
-          <textarea id="comments" name="comments" rows="4" placeholder="Tell us what kind of discount or vacation package you are looking for"></textarea>
-        </div>
+            <button type="submit">Get Deals</button>
+        </form>
 
-        <div class="agreement-box">
-          <p>
-            By submitting this form, you agree to receive promotional updates and travel offers.
-          </p>
-        </div>
+        <p id="message"></p>
+    </div>
 
-        <div class="button-row">
-          <button id="submitBtn" type="submit">Get My Discount Offers</button>
-          <button id="resetBtn" type="reset" class="secondary-btn">Clear</button>
-        </div>
-      </form>
-
-      <div id="thankYouMessage" class="thank-you hidden-section">
-        <h3>Thank you for registering.</h3>
-        <p>We will contact you soon with available ticket discounts and vacation offers.</p>
-      </div>
-
-      <p class="disclaimer">
-        This is an independent promotional website and is not the official Disneyland Resort website.
-      </p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>Created by Reynaldo Moros</p>
-  </footer>
-
-  <script src="js/validation.js"></script>
-  <script src="js/page.js"></script>
-  <script src="js/main.js"></script>
+    <script src="validation.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
