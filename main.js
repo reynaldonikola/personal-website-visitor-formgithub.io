@@ -1,88 +1,23 @@
-const form = document.getElementById("visitorForm");
-const fullName = document.getElementById("fullName");
-const email = document.getElementById("email");
-const phone = document.getElementById("phone");
-const zip = document.getElementById("zip");
-const state = document.getElementById("state");
-const visitReason = document.getElementById("visitReason");
-const successMessage = document.getElementById("successMessage");
-const clearBtn = document.getElementById("clearBtn");
+document.getElementById("visitorForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-function checkField(input, validator, errorMessage) {
-  if (!validator(input.value)) {
-    showError(input, errorMessage);
-    return false;
-  }
-  showSuccess(input);
-  return true;
-}
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let visitors = document.getElementById("visitors").value;
+    let month = document.getElementById("month").value;
+    let park = document.getElementById("park").value;
+    let deal = document.getElementById("deal").value;
 
-fullName.addEventListener("input", () => {
-  checkField(fullName, validateName, "Name must be at least 3 characters.");
-});
+    let message = validateForm(name, email, phone, visitors, month, park, deal);
 
-email.addEventListener("input", () => {
-  checkField(email, validateEmail, "Enter a valid email address.");
-});
+    if (message !== "") {
+        document.getElementById("message").innerText = message;
+        document.getElementById("message").style.color = "red";
+    } else {
+        document.getElementById("message").innerText = "Success! Check your email for exclusive deals.";
+        document.getElementById("message").style.color = "green";
 
-phone.addEventListener("input", () => {
-  checkField(phone, validatePhone, "Enter a valid phone number.");
-});
-
-zip.addEventListener("input", () => {
-  checkField(zip, validateZip, "ZIP code must be 5 digits.");
-});
-
-state.addEventListener("change", () => {
-  checkField(state, validateState, "Please select a state.");
-});
-
-visitReason.addEventListener("input", () => {
-  if (visitReason.value.trim().length > 0) {
-    showSuccess(visitReason);
-  } else {
-    visitReason.classList.remove("valid", "invalid");
-    visitReason.parentElement.querySelector(".error-message").textContent = "";
-  }
-});
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const isNameValid = checkField(fullName, validateName, "Name must be at least 3 characters.");
-  const isEmailValid = checkField(email, validateEmail, "Enter a valid email address.");
-  const isPhoneValid = checkField(phone, validatePhone, "Enter a valid phone number.");
-  const isZipValid = checkField(zip, validateZip, "ZIP code must be 5 digits.");
-  const isStateValid = checkField(state, validateState, "Please select a state.");
-
-  if (isNameValid && isEmailValid && isPhoneValid && isZipValid && isStateValid) {
-    successMessage.textContent = "Form submitted successfully.";
-    form.reset();
-
-    const fields = form.querySelectorAll("input, select, textarea");
-    fields.forEach((field) => {
-      field.classList.remove("valid", "invalid");
-    });
-
-    const messages = form.querySelectorAll(".error-message");
-    messages.forEach((message) => {
-      message.textContent = "";
-    });
-  } else {
-    successMessage.textContent = "";
-  }
-});
-
-clearBtn.addEventListener("click", () => {
-  successMessage.textContent = "";
-
-  const fields = form.querySelectorAll("input, select, textarea");
-  fields.forEach((field) => {
-    field.classList.remove("valid", "invalid");
-  });
-
-  const messages = form.querySelectorAll(".error-message");
-  messages.forEach((message) => {
-    message.textContent = "";
-  });
+        document.getElementById("visitorForm").reset();
+    }
 });
