@@ -1,53 +1,264 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background: #f0f4f8;
+    background-color: #f4f7fb;
+    color: #1f2937;
+    line-height: 1.5;
+}
+
+.overlay {
+    display: none;
+}
+
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(8, 22, 52, 0.55), rgba(8, 22, 52, 0.55)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+    color: white;
+    padding: 20px 8%;
+}
+
+.navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    padding: 12px 0;
 }
 
-.container {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    width: 350px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-h1 {
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.hero-content {
+    min-height: calc(100vh - 90px);
+    display: flex;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-text p {
+    font-size: 1.15rem;
+    margin-bottom: 28px;
+    max-width: 580px;
+}
+
+.hero-button {
+    display: inline-block;
+    background: #f59e0b;
+    color: white;
+    text-decoration: none;
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: #d97706;
+}
+
+.info-section,
+.parks-section,
+.form-section {
+    padding: 70px 8%;
+}
+
+.info-section h2,
+.parks-section h2,
+.form-section h2 {
     text-align: center;
-    color: #333;
+    font-size: 2rem;
+    margin-bottom: 35px;
 }
 
-label {
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.feature-card {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+    color: #0f4c81;
+}
+
+.parks-section {
+    background: #eef4fb;
+}
+
+.parks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.park-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.park-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
     display: block;
-    margin-top: 10px;
 }
 
-input, select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+.park-card-content {
+    padding: 20px;
 }
 
-button {
-    margin-top: 15px;
+.park-card-content h3 {
+    margin-bottom: 10px;
+    color: #0f4c81;
+}
+
+.form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form-text h2 {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.form-text p {
+    margin-bottom: 18px;
+    font-size: 1.05rem;
+}
+
+.form-text ul {
+    padding-left: 20px;
+}
+
+.form-text li {
+    margin-bottom: 10px;
+}
+
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-card label {
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.form-card input,
+.form-card select {
     width: 100%;
-    padding: 10px;
-    background: #0077cc;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.form-card button {
+    margin-top: 18px;
+    width: 100%;
+    padding: 14px;
+    background: #2563eb;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-button:hover {
-    background: #005fa3;
+.form-card button:hover {
+    background: #1d4ed8;
 }
 
 #message {
-    margin-top: 15px;
+    margin-top: 16px;
     text-align: center;
     font-weight: bold;
+    min-height: 24px;
+}
+
+.small-note {
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: #6b7280;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .features,
+    .parks-grid,
+    .form-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text h1 {
+        font-size: 2.3rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
 }
