@@ -2,66 +2,156 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theme Park Deals</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <div class="overlay"></div>
 
-    <div class="container">
-        <h1>Get Exclusive Theme Park Discounts</h1>
-        <p>Sign up to receive special offers for Disneyland and Universal Studios!</p>
+    <header class="hero">
+        <nav class="navbar">
+            <div class="logo">ParkSaver</div>
+            <div class="nav-links">
+                <a href="#offers">Offers</a>
+                <a href="#parks">Parks</a>
+                <a href="#signup">Sign Up</a>
+            </div>
+        </nav>
 
-        <form id="visitorForm">
-            <label>Full Name:</label>
-            <input type="text" id="name">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Get Exclusive Theme Park Discounts</h1>
+                <p>
+                    Register today and unlock special ticket and hotel offers for Disneyland,
+                    California Adventure, and Universal Studios Hollywood.
+                </p>
+                <a href="#signup" class="hero-button">Get My Deals</a>
+            </div>
+        </div>
+    </header>
 
-            <label>Email:</label>
-            <input type="email" id="email">
+    <main>
+        <section id="offers" class="info-section">
+            <h2>Why Sign Up?</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Ticket Discounts</h3>
+                    <p>Find special pricing for families, couples, and group visits.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Hotel Packages</h3>
+                    <p>Explore options that combine your stay and park tickets in one deal.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Seasonal Offers</h3>
+                    <p>Get updates on limited promotions based on your travel month.</p>
+                </div>
+            </div>
+        </section>
 
-            <label>Phone:</label>
-            <input type="text" id="phone">
+        <section id="parks" class="parks-section">
+            <h2>Featured Parks</h2>
+            <div class="parks-grid">
+                <div class="park-card">
+                    <img src="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=1200&q=80" alt="Disneyland castle">
+                    <div class="park-card-content">
+                        <h3>Disneyland</h3>
+                        <p>Classic attractions, family fun, and magical experiences for every age.</p>
+                    </div>
+                </div>
 
-            <label>Number of Visitors:</label>
-            <input type="number" id="visitors">
+                <div class="park-card">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="California adventure style theme park">
+                    <div class="park-card-content">
+                        <h3>California Adventure</h3>
+                        <p>Thrill rides, Pixar fun, and unforgettable entertainment across the park.</p>
+                    </div>
+                </div>
 
-            <label>Travel Month:</label>
-            <select id="month">
-                <option value="">Select Month</option>
-                <option>January</option>
-                <option>February</option>
-                <option>March</option>
-                <option>April</option>
-                <option>May</option>
-                <option>June</option>
-                <option>July</option>
-                <option>August</option>
-                <option>September</option>
-                <option>October</option>
-                <option>November</option>
-                <option>December</option>
-            </select>
+                <div class="park-card">
+                    <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80" alt="Universal Studios style amusement park">
+                    <div class="park-card-content">
+                        <h3>Universal Studios Hollywood</h3>
+                        <p>Movie-based attractions, immersive worlds, and exciting studio energy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <label>Park:</label>
-            <select id="park">
-                <option value="">Select Park</option>
-                <option>Disneyland</option>
-                <option>California Adventure</option>
-                <option>Universal Studios Hollywood</option>
-            </select>
+        <section id="signup" class="form-section">
+            <div class="form-wrapper">
+                <div class="form-text">
+                    <h2>Sign Up for Discount Alerts</h2>
+                    <p>
+                        Fill out the form and we will match you with the best available offers
+                        for your preferred travel dates and park selection.
+                    </p>
+                    <ul>
+                        <li>Easy registration</li>
+                        <li>Fast confirmation</li>
+                        <li>Park and package options</li>
+                    </ul>
+                </div>
 
-            <label>Type of Deal:</label>
-            <select id="deal">
-                <option value="">Select Option</option>
-                <option>Tickets Discount</option>
-                <option>Hotel + Tickets</option>
-                <option>Family Package</option>
-            </select>
+                <div class="form-card">
+                    <form id="visitorForm">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name">
 
-            <button type="submit">Get Deals</button>
-        </form>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email">
 
-        <p id="message"></p>
-    </div>
+                        <label for="phone">Phone</label>
+                        <input type="text" id="phone" placeholder="Enter your phone number">
+
+                        <label for="visitors">Number of Visitors</label>
+                        <input type="number" id="visitors" placeholder="How many people?">
+
+                        <label for="month">Travel Month</label>
+                        <select id="month">
+                            <option value="">Select Month</option>
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+
+                        <label for="park">Park</label>
+                        <select id="park">
+                            <option value="">Select Park</option>
+                            <option>Disneyland</option>
+                            <option>California Adventure</option>
+                            <option>Universal Studios Hollywood</option>
+                        </select>
+
+                        <label for="deal">Type of Deal</label>
+                        <select id="deal">
+                            <option value="">Select Option</option>
+                            <option>Tickets Discount</option>
+                            <option>Hotel + Tickets</option>
+                            <option>Family Package</option>
+                        </select>
+
+                        <button type="submit">Get Deals</button>
+                    </form>
+
+                    <p id="message"></p>
+                    <p class="small-note">
+                        Independent promotional website for travel deal registration.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="validation.js"></script>
     <script src="main.js"></script>
