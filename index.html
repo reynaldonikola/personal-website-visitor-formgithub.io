@@ -3,157 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theme Park Deals</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Personal Website - Visitor Form</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="overlay"></div>
-
-    <header class="hero">
-        <nav class="navbar">
-            <div class="logo">ParkSaver</div>
-            <div class="nav-links">
-                <a href="#offers">Offers</a>
-                <a href="#parks">Parks</a>
-                <a href="#signup">Sign Up</a>
-            </div>
-        </nav>
-
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Get Exclusive Theme Park Discounts</h1>
-                <p>
-                    Register today and unlock special ticket and hotel offers for Disneyland,
-                    California Adventure, and Universal Studios Hollywood.
-                </p>
-                <a href="#signup" class="hero-button">Get My Deals</a>
-            </div>
+    <header class="site-header">
+        <div class="brand">
+            <h1>Reynaldo's Travel Deals</h1>
+            <p>Special park packages and visitor registration</p>
         </div>
+
+        <nav class="main-nav">
+            <button class="nav-btn" data-section="homeSection">Home</button>
+            <button class="nav-btn" data-section="aboutSection">About</button>
+            <button class="nav-btn" data-section="dealsSection">Deals</button>
+            <button class="nav-btn" data-section="visitSection">Log Visit</button>
+        </nav>
     </header>
 
     <main>
-        <section id="offers" class="info-section">
-            <h2>Why Sign Up?</h2>
-            <div class="features">
-                <div class="feature-card">
-                    <h3>Ticket Discounts</h3>
-                    <p>Find special pricing for families, couples, and group visits.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Hotel Packages</h3>
-                    <p>Explore options that combine your stay and park tickets in one deal.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Seasonal Offers</h3>
-                    <p>Get updates on limited promotions based on your travel month.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="parks" class="parks-section">
-            <h2>Featured Parks</h2>
-            <div class="parks-grid">
-                <div class="park-card">
-                    <img src="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=1200&q=80" alt="Disneyland castle">
-                    <div class="park-card-content">
-                        <h3>Disneyland</h3>
-                        <p>Classic attractions, family fun, and magical experiences for every age.</p>
-                    </div>
-                </div>
-
-                <div class="park-card">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="California adventure style theme park">
-                    <div class="park-card-content">
-                        <h3>California Adventure</h3>
-                        <p>Thrill rides, Pixar fun, and unforgettable entertainment across the park.</p>
-                    </div>
-                </div>
-
-                <div class="park-card">
-                    <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80" alt="Universal Studios style amusement park">
-                    <div class="park-card-content">
-                        <h3>Universal Studios Hollywood</h3>
-                        <p>Movie-based attractions, immersive worlds, and exciting studio energy.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="signup" class="form-section">
-            <div class="form-wrapper">
-                <div class="form-text">
-                    <h2>Sign Up for Discount Alerts</h2>
+        <section id="homeSection" class="page-section active-section">
+            <div class="hero">
+                <div class="hero-text">
+                    <h2>Find better theme park deals</h2>
                     <p>
-                        Fill out the form and we will match you with the best available offers
-                        for your preferred travel dates and park selection.
+                        Explore Disneyland, California Adventure, and Universal Studios packages.
+                        Register your visit to receive updates and customized offers.
                     </p>
-                    <ul>
-                        <li>Easy registration</li>
-                        <li>Fast confirmation</li>
-                        <li>Park and package options</li>
-                    </ul>
+                    <button id="heroVisitBtn" class="primary-btn">Log Your Visit</button>
+                </div>
+                <div class="hero-image-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=1200&q=80"
+                        alt="Theme park view"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section id="aboutSection" class="page-section hidden-section">
+            <div class="content-card">
+                <h2>About This Site</h2>
+                <p>
+                    This is a personal website project that shares travel inspiration,
+                    theme park information, and a visitor registration form.
+                </p>
+                <p>
+                    Visitors can log their information, share how they found the page,
+                    and leave comments for follow-up.
+                </p>
+            </div>
+        </section>
+
+        <section id="dealsSection" class="page-section hidden-section">
+            <h2 class="section-title">Popular Parks</h2>
+            <div class="card-grid">
+                <article class="park-card">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Disney style park">
+                    <div class="park-card-body">
+                        <h3>Disneyland</h3>
+                        <p>Classic rides, family attractions, and magical experiences.</p>
+                    </div>
+                </article>
+
+                <article class="park-card">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80" alt="Adventure park">
+                    <div class="park-card-body">
+                        <h3>California Adventure</h3>
+                        <p>Thrill rides, Pixar fun, and entertainment for every age.</p>
+                    </div>
+                </article>
+
+                <article class="park-card">
+                    <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80" alt="Universal style park">
+                    <div class="park-card-body">
+                        <h3>Universal Studios Hollywood</h3>
+                        <p>Movie attractions, exciting rides, and immersive experiences.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="visitSection" class="page-section hidden-section">
+            <div class="form-shell">
+                <div class="form-intro">
+                    <h2>Visitor Registration Form</h2>
+                    <p>
+                        Complete the visitor form below to register your visit and
+                        receive travel deal updates.
+                    </p>
                 </div>
 
-                <div class="form-card">
-                    <form id="visitorForm">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" placeholder="Enter your full name">
+                <form id="myform" class="visitor-form" novalidate>
+                    <div id="formArea">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" class="track-validation" placeholder="Enter first name">
+                                <div class="errorMsg"></div>
+                            </div>
 
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Enter your email">
+                            <div class="form-field">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" class="track-validation" placeholder="Enter last name">
+                                <div class="errorMsg"></div>
+                            </div>
+                        </div>
 
-                        <label for="phone">Phone</label>
-                        <input type="text" id="phone" placeholder="Enter your phone number">
+                        <div class="form-row">
+                            <div class="form-field full-width">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" name="address" class="track-validation" placeholder="Enter address">
+                                <div class="errorMsg"></div>
+                            </div>
+                        </div>
 
-                        <label for="visitors">Number of Visitors</label>
-                        <input type="number" id="visitors" placeholder="How many people?">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city" class="track-validation" placeholder="Enter city">
+                                <div class="errorMsg"></div>
+                            </div>
 
-                        <label for="month">Travel Month</label>
-                        <select id="month">
-                            <option value="">Select Month</option>
-                            <option>January</option>
-                            <option>February</option>
-                            <option>March</option>
-                            <option>April</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>August</option>
-                            <option>September</option>
-                            <option>October</option>
-                            <option>November</option>
-                            <option>December</option>
-                        </select>
+                            <div class="form-field">
+                                <label for="state">State</label>
+                                <input type="text" id="state" name="state" maxlength="2" class="track-validation" placeholder="UT">
+                                <div class="errorMsg"></div>
+                            </div>
 
-                        <label for="park">Park</label>
-                        <select id="park">
-                            <option value="">Select Park</option>
-                            <option>Disneyland</option>
-                            <option>California Adventure</option>
-                            <option>Universal Studios Hollywood</option>
-                        </select>
+                            <div class="form-field">
+                                <label for="zip">Zip Code</label>
+                                <input type="text" id="zip" name="zip" class="track-validation" placeholder="84095">
+                                <div class="errorMsg"></div>
+                            </div>
+                        </div>
 
-                        <label for="deal">Type of Deal</label>
-                        <select id="deal">
-                            <option value="">Select Option</option>
-                            <option>Tickets Discount</option>
-                            <option>Hotel + Tickets</option>
-                            <option>Family Package</option>
-                        </select>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="phone">Cell Phone</label>
+                                <input type="text" id="phone" name="phone" class="track-validation" placeholder="801-555-1234">
+                                <div class="errorMsg"></div>
+                            </div>
 
-                        <button type="submit">Get Deals</button>
-                    </form>
+                            <div class="form-field">
+                                <label for="email">Email Address</label>
+                                <input type="text" id="email" name="email" class="track-validation" placeholder="name@email.com">
+                                <div class="errorMsg"></div>
+                            </div>
+                        </div>
 
-                    <p id="message"></p>
-                    <p class="small-note">
-                        Independent promotional website for travel deal registration.
-                    </p>
-                </div>
+                        <div class="form-row">
+                            <div class="form-field full-width">
+                                <label for="findPage">How did you find my page?</label>
+                                <select id="findPage" name="findPage" class="track-validation">
+                                    <option value="">Select one</option>
+                                    <option value="Google">Google</option>
+                                    <option value="Friend">Friend</option>
+                                    <option value="Instagram">Instagram</option>
+                                    <option value="Internet Search">Internet Search</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <div class="errorMsg"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field full-width">
+                                <span class="group-label">Where did you hear about this page?</span>
+
+                                <div id="checkboxGroup" class="checkbox-group">
+                                    <label><input type="checkbox" name="contactSource" value="Internet"> Internet</label>
+                                    <label><input type="checkbox" name="contactSource" value="Friend"> Friend</label>
+                                    <label><input type="checkbox" name="contactSource" value="Google"> Google</label>
+                                    <label><input type="checkbox" name="contactSource" value="Social Media"> Social Media</label>
+                                </div>
+
+                                <div id="checkboxError" class="errorMsg"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field full-width">
+                                <label for="comments">Comments</label>
+                                <textarea id="comments" name="comments" rows="5" placeholder="Enter comments here"></textarea>
+                                <div class="errorMsg"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <button id="submitBtn" type="submit" class="primary-btn">Submit Visit</button>
+                        </div>
+                    </div>
+
+                    <div id="thankYouMessage" class="thank-you hidden-message">
+                        <h3>Thank you for registering your visit.</h3>
+                        <p>Your information was submitted successfully.</p>
+                    </div>
+                </form>
             </div>
         </section>
     </main>
 
-    <script src="validation.js"></script>
-    <script src="main.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/page.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
