@@ -13,16 +13,18 @@ document.addEventListener("DOMContentLoaded", function () {
     initValidation("#myform");
 
     const navButtons = document.querySelectorAll(".nav-btn");
-    navButtons.forEach(function(button) {
-        button.addEventListener("click", function() {
+
+    navButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
             const sectionId = button.getAttribute("data-section");
             showSection(sectionId);
         });
     });
 
     const heroVisitBtn = document.getElementById("heroVisitBtn");
+
     if (heroVisitBtn) {
-        heroVisitBtn.addEventListener("click", function() {
+        heroVisitBtn.addEventListener("click", function () {
             showSection("visitSection");
         });
     }
