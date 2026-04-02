@@ -1,0 +1,15 @@
+/*
+    theme.css
+    Changes made:
+    - Added consistent theme colors
+    - Applied soft shadows and rounded cards
+    - Added polished button and section appearance
+*/
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #0f172a;
+    --accent-color: #f59e0b;
+    --light-bg: #f8fafc;
+    --card-bg: #ffffff;
+}
