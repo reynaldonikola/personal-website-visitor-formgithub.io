@@ -79,7 +79,7 @@ function validateCheckboxGroup() {
     const errorDiv = document.getElementById("checkboxError");
     let oneChecked = false;
 
-    checkboxes.forEach(function(checkbox) {
+    checkboxes.forEach(function (checkbox) {
         if (checkbox.checked) {
             oneChecked = true;
         }
@@ -88,10 +88,10 @@ function validateCheckboxGroup() {
     if (oneChecked) {
         errorDiv.textContent = "";
         return true;
-    } else {
-        errorDiv.textContent = "Please select at least one option.";
-        return false;
     }
+
+    errorDiv.textContent = "Please select at least one option.";
+    return false;
 }
 
 function validateField(fieldId) {
@@ -155,7 +155,7 @@ function validateForm() {
         "findPage"
     ];
 
-    fieldIds.forEach(function(fieldId) {
+    fieldIds.forEach(function (fieldId) {
         if (!validateField(fieldId)) {
             isValid = false;
         }
@@ -177,18 +177,18 @@ function initValidation(formSelector) {
 
     const trackedFields = form.querySelectorAll(".track-validation");
 
-    trackedFields.forEach(function(field) {
-        field.addEventListener("change", function() {
+    trackedFields.forEach(function (field) {
+        field.addEventListener("change", function () {
             validateField(field.id);
         });
     });
 
     const groupCheckboxes = document.querySelectorAll('input[name="contactSource"]');
-    groupCheckboxes.forEach(function(checkbox) {
+    groupCheckboxes.forEach(function (checkbox) {
         checkbox.addEventListener("change", validateCheckboxGroup);
     });
 
-    form.addEventListener("submit", function(event) {
+    form.addEventListener("submit", function (event) {
         event.preventDefault();
         event.stopPropagation();
 
