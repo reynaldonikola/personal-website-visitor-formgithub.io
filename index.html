@@ -9,34 +9,40 @@
 </head>
 <body>
     <header class="site-header">
-        <div class="brand">
-            <h1>Reynaldo's Travel Deals</h1>
-            <p>Special park packages and visitor registration</p>
-        </div>
+        <div class="header-overlay"></div>
 
-        <nav class="main-nav">
-            <button class="nav-btn" data-section="homeSection">Home</button>
-            <button class="nav-btn" data-section="aboutSection">About</button>
-            <button class="nav-btn" data-section="dealsSection">Deals</button>
-            <button class="nav-btn" data-section="visitSection">Log Visit</button>
-        </nav>
+        <div class="header-content">
+            <div class="brand">
+                <h1>Reynaldo's Travel Deals</h1>
+                <p>Special park packages and visitor registration</p>
+            </div>
+
+            <nav class="main-nav">
+                <button class="nav-btn" data-section="homeSection" type="button">Home</button>
+                <button class="nav-btn" data-section="aboutSection" type="button">About</button>
+                <button class="nav-btn" data-section="dealsSection" type="button">Deals</button>
+                <button class="nav-btn" data-section="visitSection" type="button">Log Visit</button>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section id="homeSection" class="page-section active-section">
             <div class="hero">
                 <div class="hero-text">
+                    <span class="hero-tag">Theme Park Planning</span>
                     <h2>Find better theme park deals</h2>
                     <p>
                         Explore Disneyland, California Adventure, and Universal Studios packages.
-                        Register your visit to receive updates and customized offers.
+                        Register your visit to receive updates and personalized travel offers.
                     </p>
-                    <button id="heroVisitBtn" class="primary-btn">Log Your Visit</button>
+                    <button id="heroVisitBtn" class="primary-btn" type="button">Log Your Visit</button>
                 </div>
+
                 <div class="hero-image-card">
                     <img
-                        src="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=1200&q=80"
-                        alt="Theme park view"
+                        src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80"
+                        alt="Theme park ride"
                     >
                 </div>
             </div>
@@ -58,9 +64,13 @@
 
         <section id="dealsSection" class="page-section hidden-section">
             <h2 class="section-title">Popular Parks</h2>
+
             <div class="card-grid">
                 <article class="park-card">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Disney style park">
+                    <img
+                        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+                        alt="Disneyland style park"
+                    >
                     <div class="park-card-body">
                         <h3>Disneyland</h3>
                         <p>Classic rides, family attractions, and magical experiences.</p>
@@ -68,7 +78,10 @@
                 </article>
 
                 <article class="park-card">
-                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80" alt="Adventure park">
+                    <img
+                        src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80"
+                        alt="California Adventure style park"
+                    >
                     <div class="park-card-body">
                         <h3>California Adventure</h3>
                         <p>Thrill rides, Pixar fun, and entertainment for every age.</p>
@@ -76,7 +89,10 @@
                 </article>
 
                 <article class="park-card">
-                    <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80" alt="Universal style park">
+                    <img
+                        src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80"
+                        alt="Universal Studios style attraction"
+                    >
                     <div class="park-card-body">
                         <h3>Universal Studios Hollywood</h3>
                         <p>Movie attractions, exciting rides, and immersive experiences.</p>
@@ -90,8 +106,7 @@
                 <div class="form-intro">
                     <h2>Visitor Registration Form</h2>
                     <p>
-                        Complete the visitor form below to register your visit and
-                        receive travel deal updates.
+                        Complete the visitor form below to register your visit and receive travel deal updates.
                     </p>
                 </div>
 
@@ -191,7 +206,7 @@
                             </div>
                         </div>
 
-                        <div class="form-row">
+                        <div class="form-row submit-row">
                             <button id="submitBtn" type="submit" class="primary-btn">Submit Visit</button>
                         </div>
                     </div>
