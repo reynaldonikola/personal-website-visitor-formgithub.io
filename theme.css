@@ -1,9 +1,8 @@
 /*
     theme.css
     Changes made:
-    - Added consistent theme colors
-    - Applied soft shadows and rounded cards
-    - Added polished button and section appearance
+    - Added shared theme variables
+    - Added consistent color palette for the whole site
 */
 
 :root {
